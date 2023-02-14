@@ -1,10 +1,18 @@
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
+var timeLeft = 120;
+var timeInterval;
+var startBtn = document.getElementById("startBtn")
+var level = 0
+
+startBtn.addEventListener("click", function(){
+  countdown();
+}) 
+
 
 function countdown() {
-  var timeLeft = 120;
 
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     if (timeLeft > 1) {
       timerEl.textContent = timeLeft + ' seconds remaining';
       timeLeft--;
@@ -14,9 +22,12 @@ function countdown() {
     } else {
       timerEl.textContent = "Game Over";
       clearInterval(timeInterval);
-      displayMessage();
+      // execute the end game function
     }
   }, 1000);
 }
 
-countdown();
+function displayQuestion (){
+var questionEl = document.getElementById("question")
+questionEl.textContent=questionBank[level].question
+}

@@ -8,7 +8,7 @@ var questionBank = [
     },
     {
         question: "What is the correct way to write a JavaScript array?",
-        selection: ["var colors = ["red", "green", "blue"]", "var colors = (1:"red", 2:"green", 3:"blue")", "var colors = "red", "green", "blue"", "var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")"],
+        selection: ["var colors = ['red', "green", "blue"]", "var colors = (1:"red", 2:"green", 3:"blue")", "var colors = "red", "green", "blue"", "var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")"],
         answer: "var colors = ["red", "green", "blue"]"
     },
     {
