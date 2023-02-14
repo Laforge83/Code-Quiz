@@ -1,4 +1,4 @@
-// Questions were taken from W3 Schools tutorial quiz.
+// Questions were sourced from W3Schools tutorial quiz.
 
 var questionBank = [
     {
