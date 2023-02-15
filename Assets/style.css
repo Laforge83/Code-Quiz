@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #523F38;
+    background-color: #282B28;
     margin: auto;
     padding: auto;
     text-align: center;
@@ -18,14 +18,42 @@ h1 {
     font-size: 250%;
     text-shadow: #FFFFFF 2px 0px 21px;
     padding: 20px;
+    margin-top: 80px;
+}
+
+h2 {
+    padding: 20px;    
+}
+
+#countdown {
+    position: absolute;
+    font-size: 125%;
+    padding: 15px;
+    top: 0;
+    right: 0;
+    color: #D36135;
+    
+}
+
+div button {
+    margin: 4px;
+    padding: 5px;
+    border-width: 1.5px;
+    border-radius: 5px;
+    background-color: #D36135;
+    color: #FFFFFF;
+}
+
+div button:hover {
+    cursor: pointer;
 }
 
 p {
-    padding: 0 40px 20px 40px;
+    padding: 40px;
 }
 
 .btn {
-    background: #FF715B;
+    background: #3E5641;
     border-color: #4C5454;
     color: #FFFFFF;
     font-size: 20px;
@@ -36,6 +64,4 @@ p {
 
 .btn:hover {
     cursor: pointer;
-    box-shadow: 0 8px 8px 0 #4C5454;
-
 }
