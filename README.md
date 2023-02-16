@@ -12,6 +12,6 @@ Created by Daniel Laforge with the help of Bobbi Tarkany and Jeremy Jones (tutor
 <img src="Assets\Code-Quiz_screenshot.png" alt="Code Quiz screenshot">
 
 ## Website URL:
-https://laforge83.github.io/Password-Generator/
+https://laforge83.github.io/Code-Quiz/
 ## License:
 MIT license
