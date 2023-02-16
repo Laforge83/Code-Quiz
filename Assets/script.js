@@ -1,16 +1,13 @@
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
-var evaluateAnswer = document.getElementById("#evaluateAnswer")
+var evaluateAnswer = document.getElementById("evaluateAnswer")
+var answersEl = document.getElementById("answer")
+var startBtn = document.getElementById("startBtn")
+var questionEl = document.getElementById("question")
+
 var timeLeft = 120;
 var timeInterval;
-var startBtn = document.getElementById("startBtn")
 var level = 0
-
-startBtn.addEventListener("click", function () {
-  countdown();
-  displayQuestion();
-})
-
 
 function countdown() {
 
@@ -24,30 +21,33 @@ function countdown() {
     } else {
       timerEl.textContent = "Game Over";
       clearInterval(timeInterval);
+          
       // execute the end game function
     }
   }, 1000);
 }
 
 function displayQuestion() {
-  var questionEl = document.getElementById("question")
   questionEl.textContent = questionBank[level].question
+  answersEl.innerHTML = ""
   for (let i = 0; i < questionBank[level].selection.length; i++) {
     const element = questionBank[level].selection[i];
     var btn = document.createElement("button");
+    btn.setAttribute("value", element)
     btn.textContent = element
-    btn.onclick = answer;
-    document.getElementById("answer").append(btn)
+    btn.onclick = handleAnswerClick;
+    answersEl.append(btn)
   }
 }
 
-
-function answer() {
-  console.log("button click");
+function handleAnswerClick(event) {
+  var value = event.target.value
+  console.log("my value is ", evaluateAnswer);
+  evaluateAnswerChoice(value)
 }
 
-function evaluateAnswer(event) {
-  if (event === questionBank[level].answer) {
+function evaluateAnswerChoice(value) {
+  if (value === questionBank[level].answer) {
     evaluateAnswer.textContent = "Correct!";
   } else {
     timeLeft -= 10;
@@ -58,11 +58,7 @@ function evaluateAnswer(event) {
   displayQuestion();
 }
 
-
-
-// get the value of the answer which was selected. (Very important)
-// user the selected answer to check if it is the correct answer
-// if it is the correct answer (Compare the selected answer with a value in questionBank in your program because it has the value of the correct answers)
-    // decrease the timer by 10
-// if it is not the correct answer
-    // the timer does not decrease and no further action is required
+startBtn.addEventListener("click", function () {
+  countdown();
+  displayQuestion();
+})
